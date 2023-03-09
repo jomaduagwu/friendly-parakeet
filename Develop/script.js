@@ -20,7 +20,7 @@
 //need to specify the length--> 8 >= length < 129
 function generatePassword(length){
   var charOptions = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_+-={}[]|\;:'/?.>,<`~";
-  var passwordLength = 
+  var passwordLength = 10;
   for (var i=0; i < length; i++){
     var randomIndex = Math.floor(Math.random()*charOptions.length);
   }
