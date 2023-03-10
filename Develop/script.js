@@ -19,8 +19,8 @@
 //need a prompt for each
 //need to specify the length--> 8 >= length < 129
 function generatePassword(length){
-  var charOptions = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_+-={}[]|\;:'/?.>,<`~";
-  var passwordLength = 10;
+  var charOptions = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_+-={}[]|\;:'/?.>,<`~" .split(); //split char options into array
+  var passwordLength = 10; //set password length
   for (var i=0; i < length; i++){
     var randomIndex = Math.floor(Math.random()*charOptions.length);
   }
@@ -30,7 +30,9 @@ function generatePassword(length){
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
-function writePassword() { //function 'writePassword' called when user clicks button to generate new password
+function writePassword(event) { //function 'writePassword' called when user clicks button to generate new password
+  // prevent default action if there's a button in a form
+  event.preventDefault();
   var password = generatePassword();
   var passwordText = document.querySelector("#password"); //use querySelector method of the document object to select the HTML element with an id of password
 
