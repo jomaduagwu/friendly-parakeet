@@ -15,17 +15,59 @@
 // WHEN the password is generated
 // THEN the password is either displayed in an alert or written to the page
 
-//need to set password options - uppercase, lowercase, numbers and special characters
-//need a prompt for each
-//need to specify the length--> 8 >= length < 129
-function generatePassword(length){
-  var charOptions = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_+-={}[]|\;:'/?.>,<`~" .split(); //split char options into array
-  var passwordLength = 10; //set password length
-  for (var i=0; i < length; i++){
-    var randomIndex = Math.floor(Math.random()*charOptions.length);
+
+// function to get the desired password criteria
+function passwordCriteria(){
+  // prompt for desired password length
+  var length = parseInt(prompt("Enter password length - between 8 and 128:"));
+  // added alert for password length less than 8 or greater than 128
+  if (length < 8 || length > 128){
+    alert("Password length must be between 8 and 128");
+    return null;
+  };
+
+  var upperCase = confirm("Include upper case letters?");
+  var lowerCase = confirm("Include lower case letters?");
+  var number = confirm("Include numbers?");
+  var specialChar = confirm("Include special characters?");
+  // add alert if none of the criteria is selected
+  if(!upperCase && !lowerCase && !number && !specialChar){
+    alert("At least one character criteria must be selected");
+    return null;
+  }
+  
+  return{
+    length: length, 
+    upperCase: upperCase, 
+    lowerCase: lowerCase, 
+    number: number, 
+    specialChar: specialChar
+  };
+
+}
+
+function generatePassword(passwordCriteria){
+  var charOptions = "";
+  var password = "";
+
+  if (passwordCriteria.upperCase){charOptions += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";} //split char options into array
+  if (passwordCriteria.lowerCase){charOptions += "abcdefghijklmnopqrstuvwxyz";} //split char options into array
+  if (passwordCriteria.number){charOptions += "1234567890";}
+  // if (passwordCriteria.number){charOptions += "1234567890".split()};
+  if (passwordCriteria.specialChar){charOptions += "!@#$%^&*()_+-={}[]|\/?.>,<`~";
+};
+  
+  for (var i=0; i < passwordCriteria.length; i++){
+    password += charOptions.charAt(Math.floor(Math.random() * charOptions.length));
+   
+    // var randomIndex = Math.floor(Math.random() * charOptions.length);
+    // password += charOptions[randomIndex];
   }
   return password;
-}
+};
+
+generatePassword(passwordCriteria());
+
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
@@ -33,12 +75,15 @@ var generateBtn = document.querySelector("#generate");
 function writePassword(event) { //function 'writePassword' called when user clicks button to generate new password
   // prevent default action if there's a button in a form
   event.preventDefault();
-  var password = generatePassword();
+  var password = generatePassword(passwordCriteria()); //added passwordCriteria
   var passwordText = document.querySelector("#password"); //use querySelector method of the document object to select the HTML element with an id of password
-
+  // var passwordText = document.getElementById("password");
   passwordText.value = password;
 
 }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+// on page load, prompts are loaded, need to remove that
+// need to add validation for each prompt
