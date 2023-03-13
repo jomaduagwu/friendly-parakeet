@@ -36,9 +36,9 @@ Link to deployed website - https://jomaduagwu.github.io/friendly-parakeet/
 
 Starter code was cloned from [Xandromus](https://github.com/coding-boot-camp/friendly-parakeet.git)
 
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt
-https://developer.mozilla.org/en-US/docs/Web/API/Window/prompt
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt
+- https://developer.mozilla.org/en-US/docs/Web/API/Window/prompt
 
 
 ## License
