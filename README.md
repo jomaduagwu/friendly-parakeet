@@ -3,7 +3,7 @@
 
 ## Description
 
-The purpose of this project is to add functionality to a starter code for a random password generator. When the user needs a new secure password, the user clicks on the generate password button and answers a series of prompts for the desired password criteria. Once all prompts have been answered, a new secure password is generated and displayed on the page.  
+The purpose of this project is to modify and add functionality to a starter code for a random password generator application. When the user needs a new secure password, the user clicks on the 'generate password' button and answers a series of prompts for the desired password criteria. Once all prompts have been answered, a new secure password is generated and displayed on the page.  
 
 ## Table of Contents (Optional)
 
@@ -15,6 +15,8 @@ The purpose of this project is to add functionality to a starter code for a rand
 
 ## Tasks Completed
 
+* Added a function to prompt the user to enter desired password criteria (length, upper-case letters, lower-case letters, numbers and special characters)
+* added a function to generate a random password based on the user's selected password criteria
 
 
 
@@ -27,11 +29,12 @@ N/A
 The layout of this application is optimized for different screen sizes.
 
 Link to deployed website - 
-![Password generator screenshot](Develop/images/passport generator screenshot.png)
+
+![Password generator screenshot](Develop/images/passport-generator-screenshot.png)
 
 ## Credits
 
-
+Starter code was cloned from [Xandromus](https://github.com/coding-boot-camp/friendly-parakeet.git)
 
 
 ## License
