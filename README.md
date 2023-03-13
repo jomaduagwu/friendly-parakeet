@@ -28,13 +28,17 @@ N/A
 
 The layout of this application is optimized for different screen sizes.
 
-Link to deployed website - 
+Link to deployed website - https://jomaduagwu.github.io/friendly-parakeet/
 
 ![Password generator screenshot](Develop/images/passport-generator-screenshot.png)
 
 ## Credits
 
 Starter code was cloned from [Xandromus](https://github.com/coding-boot-camp/friendly-parakeet.git)
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt
+https://developer.mozilla.org/en-US/docs/Web/API/Window/prompt
 
 
 ## License
